@@ -1,0 +1,24 @@
+NAME: Yejarla Yaswanth Kumar
+COMPANY: MINDSHIFT TECHNOLOGIES
+DOMAIN: Python Develoer Intern
+DURATION: Feburary 5th - March 5th
+
+**TASK:**   " WEB SCRAPER USING PYTHON "
+**BBC News Web Scraper**
+This Python program scrapes the latest news headlines from the BBC News website. It uses the requests library to fetch the HTML content of the page and BeautifulSoup to parse and extract the headlines.
+
+**Requirements**
+   * Python 3.x
+   * requests library
+   * beautifulsoup4 library
+
+**Usage**
+   * Clone this repository or download the code files.
+   * Ensure you have the required libraries installed.
+   * Run the news_scraper.py script.
+
+**How it Works**
+   * The script sends an HTTP GET request to the BBC News website.
+   * It parses the HTML content using BeautifulSoup.
+   * It extracts all the headlines (in <h2> tags) and prints them.
+
