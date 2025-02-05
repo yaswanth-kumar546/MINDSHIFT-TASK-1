@@ -1,0 +1,30 @@
+# Welcome to the BBC news webs scraper
+# This program will scrape the latest news headlines from the BBC news website.
+import requests
+from bs4 import BeautifulSoup
+# function to scrape news
+def scrape_news(url):
+    try:
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+        response.raise_for_status()  # Raise an error for bad responses
+        
+        soup = BeautifulSoup(response.text, "html.parser")
+        headlines = soup.find_all("h2")  # Adjust based on site's structure
+        
+        news_list = [headline.get_text(strip=True) for headline in headlines]
+        
+        return news_list
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return []
+#Mian block
+if __name__ == "__main__":
+    news_url = "https://www.bbc.com/news"  # Change to any public news website
+    headlines = scrape_news(news_url)
+    
+    if headlines:
+        print("Latest News Headlines:")
+        for index, headline in enumerate(headlines, start=1):
+            print(f"{index}. {headline}")
+    else:
+        print("No headlines found.")
